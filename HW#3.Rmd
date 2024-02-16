@@ -35,11 +35,13 @@ sim_rolls_vec <- sample(1:6,(how_many_rolls*how_many_sims), replace = TRUE) # ve
 ```{r}
 if_come_up_5 <- as.numeric(lots_of_sim_rolls == 6)
 mean(if_come_up_5)
+[1] 0.182
 ```
 
 ```{r}
 if_come_up_5_vec <- as.numeric(sim_rolls_vec == 6)
 mean(if_come_up_5_vec)
+[1] 0.145
 ```
 
 ```{r}
@@ -56,11 +58,14 @@ sim_rolls_vec <- sample(1:6,(how_many_rolls*how_many_sims), replace = TRUE) # ve
 ```{r}
 if_come_up_5 <- as.numeric(lots_of_sim_rolls == 6)
 mean(if_come_up_5)
+[1] 0.182
 ```
 
 ```{r}
 if_come_up_5_vec <- as.numeric(sim_rolls_vec == 6)
 mean(if_come_up_5_vec)
+[1] 0.173
+
 ```
 
 My partner and I decided to use the number 5 for our experiment, so the probability of 5 appearing is 1/6 chance. It will be unfair if 5 repeats more than the other numbers.
