@@ -1,0 +1,70 @@
+---
+title: "HW#3"
+author: "Yetsy Santa"
+date: Feb 13, 2024
+output: html_document
+Partner: Naumi Rasha or Nahomi Farrington
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)  
+``` 
+
+```{r}
+how_many_rolls <- 20
+sim_rolls <- sample(1:6, how_many_rolls, replace = TRUE)
+```
+  
+```{r}
+# for first time
+lots_of_sim_rolls <- sample(1:6,how_many_rolls, replace = TRUE)
+
+# do 49 more simulations
+for (indx in 1:49) {
+  sim_rolls <- sample(1:6,how_many_rolls, replace = TRUE)
+  lots_of_sim_rolls <- data.frame(lots_of_sim_rolls,sim_rolls)
+  }
+```
+
+
+```{r}
+how_many_sims <- 50
+sim_rolls_vec <- sample(1:6,(how_many_rolls*how_many_sims), replace = TRUE) # vectorized version
+```
+
+```{r}
+if_come_up_5 <- as.numeric(lots_of_sim_rolls == 6)
+mean(if_come_up_5)
+```
+
+```{r}
+if_come_up_5_vec <- as.numeric(sim_rolls_vec == 6)
+mean(if_come_up_5_vec)
+```
+
+```{r}
+how_many_rolls <- 100
+sim_rolls <- sample(1:6, how_many_rolls, replace = TRUE)
+```
+
+
+```{r}
+how_many_sims <- 100
+sim_rolls_vec <- sample(1:6,(how_many_rolls*how_many_sims), replace = TRUE) # vectorized version
+```
+
+```{r}
+if_come_up_5 <- as.numeric(lots_of_sim_rolls == 6)
+mean(if_come_up_5)
+```
+
+```{r}
+if_come_up_5_vec <- as.numeric(sim_rolls_vec == 6)
+mean(if_come_up_5_vec)
+```
+
+My partner and I decided to use the number 5 for our experiment, so the probability of 5 appearing is 1/6 chance. It will be unfair if 5 repeats more than the other numbers.
+We decided to roll our dice 20 times and 5 appeared less than the other number. My partner and I think this is fair. It will become unfair if 5 appeared more than 6 times.
+
+
+
